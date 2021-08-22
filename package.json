@@ -1,0 +1,12 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "A simple node module for capturing process output",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MBR",
+  "license": "ISC"
+}
