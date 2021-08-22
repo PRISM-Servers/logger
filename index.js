@@ -32,7 +32,7 @@ class Logger extends EventEmitter {
     constructor({types, log} = {}) {
         super();
 
-        this.logs = [];
+        this.logs = {};
 
         if (!types) throw new Error("Missing types");
         if (!log) throw new Error("Missing log");
