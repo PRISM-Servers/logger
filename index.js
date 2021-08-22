@@ -76,10 +76,6 @@ class Logger extends EventEmitter {
 
                 str = str.trim();
 
-                if (log.emit) {
-                    this.emit(item, str);
-                }
-
                 if (log.file) {
                     let d = new Date();
                     let fn = `${item}_${d.getUTCFullYear()}_${d.getUTCMonth() + 1}_${d.getUTCDate()}.log`;
@@ -94,6 +90,8 @@ class Logger extends EventEmitter {
                         this.logs[item].splice(0, this.logs[item].length - log.memory.history);
                     }
                 }
+                
+                if (log.emit) this.emit(item, str);
             };
 
             console[item].modified = true;
