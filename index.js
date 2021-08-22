@@ -42,8 +42,8 @@ class Logger extends EventEmitter {
         if (Object.keys(log).length == 0) throw new Error("log is empty");
 
         if (log.file && !log.file.dir && typeof log.file.dir != "string") throw new Error("Invalid dir");
-        if (log.memory && !log.memory.history && isNaN(log.memory.history)) throw new Error("Invalid memory history size");
-        if (log.file.timestamp && typeof log.file.timestamp != "function") throw new Error("Invalid file timestamp");
+        if (log.memory && isNaN(log.memory.history)) throw new Error("Invalid memory history size");
+        if (log.file && log.file.timestamp && typeof log.file.timestamp != "function") throw new Error("Invalid file timestamp");
 
         for (let item of types) {
             if (!["log", "warn", "error"].includes(item)) {

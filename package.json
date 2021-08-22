@@ -1,6 +1,6 @@
 {
   "name": "logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple node module for capturing process output",
   "main": "index.js",
   "scripts": {
