@@ -84,7 +84,7 @@ class Logger extends EventEmitter {
                 }
 
                 if (log.memory) {
-                    this.logs[item].push(str);
+                    this.logs[item].push({time: new Date(), message: str});
 
                     if (this.logs[item].length >= log.memory.history) {
                         this.logs[item].splice(0, this.logs[item].length - log.memory.history);
