@@ -46,8 +46,8 @@ class Logger extends EventEmitter {
         if (log.file && log.file.timestamp && typeof log.file.timestamp != "function") throw new Error("Invalid file timestamp");
 
         for (let item of types) {
-            if (!["log", "warn", "error"].includes(item)) {
-                throw new Error("Invalid type " + item + ", must be one of log, warn, error");
+            if (!["log", "warn", "error", "debug"].includes(item)) {
+                throw new Error("Invalid type " + item + ", must be one of log, warn, error, debug");
             }
         }
 
